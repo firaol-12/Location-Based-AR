@@ -10,23 +10,38 @@
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
       renderer="antialias: true; alpha: true">
 
-      <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
+      <!-- Fake GPS: you are in the lab -->
+      <a-camera gps-new-camera="simulateLatitude: 8.564321; simulateLongitude: 39.289371"></a-camera>
 
-      <!-- Red box -->
-      <a-entity
-        geometry="primitive: box"
-        material="color: red"
-        scale="10 10 10"
-        gps-new-entity-place="latitude: 8.564096; longitude: 39.289312">
-      </a-entity>
+      <!-- NORTH (red) -->
+      <a-entity geometry="primitive: box" material="color: red" scale="2 2 2"
+        gps-new-entity-place="latitude: 8.564391; longitude: 39.289371"></a-entity>
+      <a-entity text="value: NORTH; color: white; align: center" scale="12 12 12" position="0 3 0"
+        gps-new-entity-place="latitude: 8.564391; longitude: 39.289371"></a-entity>
 
-      <!-- Text label -->
-      <a-entity
-        text="value: Hello!; color: white; align: center"
-        scale="50 50 50"
-        position="0 20 0"
-        gps-new-entity-place="latitude: 8.564347; longitude: 39.289445">
-      </a-entity>
+      <!-- SOUTH (blue) -->
+      <a-entity geometry="primitive: box" material="color: blue" scale="2 2 2"
+        gps-new-entity-place="latitude: 8.564251; longitude: 39.289371"></a-entity>
+      <a-entity text="value: SOUTH; color: white; align: center" scale="12 12 12" position="0 3 0"
+        gps-new-entity-place="latitude: 8.564251; longitude: 39.289371"></a-entity>
+
+      <!-- EAST (green) -->
+      <a-entity geometry="primitive: box" material="color: green" scale="2 2 2"
+        gps-new-entity-place="latitude: 8.564321; longitude: 39.289441"></a-entity>
+      <a-entity text="value: EAST; color: white; align: center" scale="12 12 12" position="0 3 0"
+        gps-new-entity-place="latitude: 8.564321; longitude: 39.289441"></a-entity>
+
+      <!-- WEST (yellow) -->
+      <a-entity geometry="primitive: box" material="color: yellow" scale="2 2 2"
+        gps-new-entity-place="latitude: 8.564321; longitude: 39.289301"></a-entity>
+      <a-entity text="value: WEST; color: white; align: center" scale="12 12 12" position="0 3 0"
+        gps-new-entity-place="latitude: 8.564321; longitude: 39.289301"></a-entity>
+
+      <!-- NEXT BUILDING (big orange box, about 26 m south) -->
+      <a-entity geometry="primitive: box" material="color: orange" scale="8 8 8"
+        gps-new-entity-place="latitude: 8.564096; longitude: 39.289312"></a-entity>
+      <a-entity text="value: Next Building; color: white; align: center" scale="30 30 30" position="0 10 0"
+        gps-new-entity-place="latitude: 8.564096; longitude: 39.289312"></a-entity>
 
     </a-scene>
   </body>
